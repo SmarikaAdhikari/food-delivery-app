@@ -14,12 +14,12 @@ class FavoritesPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Favorites'),
       ),
-      body: favoritesModel.favorites.isEmpty
+      body: favoritesModel.favoriteItems.isEmpty
           ? const Center(child: Text('No favorite items'))
           : ListView.builder(
-              itemCount: favoritesModel.favorites.length,
+              itemCount: favoritesModel.favoriteItems.length,
               itemBuilder: (context, index) {
-                final item = favoritesModel.favorites[index];
+                final item = favoritesModel.favoriteItems[index];
                 return ListTile(
                   leading: Image.asset(item.image, height: 50, width: 50),
                   title: Text(item.name),
@@ -27,7 +27,7 @@ class FavoritesPage extends StatelessWidget {
                   trailing: IconButton(
                     icon: const Icon(Icons.remove_circle),
                     onPressed: () {
-                      favoritesModel.removeFavorite(item);
+                      favoritesModel.toggleFavorite(item);
                     },
                   ),
                 );

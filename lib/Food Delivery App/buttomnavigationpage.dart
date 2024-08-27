@@ -1,6 +1,5 @@
 import 'package:awakened_devs_tasks/Food%20Delivery%20App/screens/cartpage.dart';
 import 'package:awakened_devs_tasks/Food%20Delivery%20App/screens/homepage.dart';
-import 'package:awakened_devs_tasks/Food%20Delivery%20App/screens/productpage.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavigationPage extends StatefulWidget {
@@ -15,10 +14,10 @@ class _BottomNavigationpageState extends State<BottomNavigationPage> {
 
   final screens = [
     const HomePage(),
-    const ProductdetailsPage(),
-    const ProductdetailsPage(),
     const CartPage(),
-    const ProductdetailsPage(),
+    const CartPage(),
+    const CartPage(),
+    const CartPage(),
   ];
 
   @override

@@ -11,18 +11,18 @@ class Cuisine {
 List<Cuisine> cuisine = [
   Cuisine(
     foodName: "Burger",
-    foodImage: "pictures/burgermodel.png",
+    foodImage: "pictures/burgerr.png",
   ),
   Cuisine(
     foodName: "Chicken",
-    foodImage: "pictures/ccc.png",
+    foodImage: "pictures/crispychicken.png",
   ),
   Cuisine(
     foodName: "Fries",
-    foodImage: "pictures/fries.png",
+    foodImage: "pictures/friess.png",
   ),
   Cuisine(
     foodName: "Drink",
-    foodImage: "pictures/drinks.jpeg",
+    foodImage: "pictures/drinkss.png",
   ),
 ];

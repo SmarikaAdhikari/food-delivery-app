@@ -1,22 +1,24 @@
-import 'package:awakened_devs_tasks/Food%20Delivery%20App/models/fooditems.dart';
 import 'package:flutter/material.dart';
+import '../models/fooditems.dart';
 
-class FavoritesModel with ChangeNotifier {
-  final List<Fooditems> _favorites = [];
+class FavoritesModel extends ChangeNotifier {
+  final List<Fooditems> _favoriteItems = [];
 
-  List<Fooditems> get favorites => _favorites;
+  List<Fooditems> get favoriteItems => _favoriteItems;
 
-  void addFavorite(Fooditems item) {
-    if (!_favorites.contains(item)) {
-      _favorites.add(item);
-      notifyListeners();
+  void toggleFavorite(Fooditems item) {
+    if (_favoriteItems.contains(item)) {
+      _favoriteItems.remove(item);
+    } else {
+      _favoriteItems.add(item);
     }
+    notifyListeners(); 
   }
 
-  void removeFavorite(Fooditems item) {
-    if (_favorites.contains(item)) {
-      _favorites.remove(item);
-      notifyListeners();
-    }
+  bool isFavorite(Fooditems item) {
+    return _favoriteItems.contains(item);
   }
 }
+
+
+

@@ -3,14 +3,17 @@ import 'package:awakened_devs_tasks/Food%20Delivery%20App/buttomnavigationpage.d
 import 'package:awakened_devs_tasks/constants/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import 'Food Delivery App/models/cartmodel.dart';
+import 'Food Delivery App/models/favoritemodel.dart';
 
 void main() {
- runApp(
-    ChangeNotifierProvider(
-      create: (context) => CartModel(),
-      child:const  MyApp(),
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => CartModel()),
+        ChangeNotifierProvider(create: (_) => FavoritesModel()),
+      ],
+      child: const MyApp(),
     ),
   );
 }
