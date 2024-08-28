@@ -37,21 +37,22 @@ class CartPage extends StatelessWidget {
                 SizedBox(
                     height: 50,
                     width: 70,
-                    child: Image.asset(item.image,)),
+                    child: Image.asset(
+                      item.image,
+                    )),
                 Column(
                   children: [
                     Text(item.name),
                     Text("\$${item.price}"),
-                  ],),
+                  ],
+                ),
                 const Spacer(),
-                     IconButton(
+                IconButton(
                   icon: const Icon(Icons.delete),
                   onPressed: () {
                     cart.removeItem(item);
                   },
                 ),
-                
-           
               ],
             ),
           );
