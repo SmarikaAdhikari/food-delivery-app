@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 final ThemeData appTheme = ThemeData(
   colorScheme: ColorScheme.fromSwatch(
-    primarySwatch: Colors.orange,
+    primarySwatch: Colors.purple,
   ).copyWith(
     secondary: Colors.black,
     background: const Color.fromARGB(255, 240, 240, 240),
@@ -16,7 +16,7 @@ final ThemeData appTheme = ThemeData(
     onBackground: Colors.grey[600],
     onSurface: Colors.grey,
     error: Colors.red,
-    outline: Colors.grey.shade300,
+    outline: Colors.grey.shade500,
   ),
   textTheme: TextTheme(
     headline1: const TextStyle(
