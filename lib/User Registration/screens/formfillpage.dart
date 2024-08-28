@@ -1,7 +1,8 @@
 // ignore_for_file: use_key_in_widget_constructors, library_private_types_in_public_api, prefer_final_fields, unused_local_variable
 
+import 'package:awakened_devs_tasks/User%20Registration/screens/datapage.dart';
 import 'package:flutter/material.dart';
-
+import 'package:intl/intl.dart';
 import 'user_form.dart';
 
 class RegistrationForm extends StatefulWidget {
@@ -34,7 +35,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 25,
-                    fontWeight: FontWeight.w600))),
+                    fontWeight: FontWeight.w500))),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -76,9 +77,11 @@ class _RegistrationFormState extends State<RegistrationForm> {
                       errorText:
                           _dateOfBirth == null ? 'Please select a date' : null,
                     ),
-                    child: Text(_dateOfBirth != null
-                        ? "${_dateOfBirth!.toLocal()}".split(' ')[0]
-                        : 'Select Date'),
+                    child: Text(
+                      _dateOfBirth != null
+                          ? DateFormat('yyyy-MM-dd').format(_dateOfBirth!)
+                          : 'Select Date',
+                    ),
                   ),
                 ),
                 const SizedBox(height: 20),
@@ -86,8 +89,14 @@ class _RegistrationFormState extends State<RegistrationForm> {
                   decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: "Favorite Animal"),
-                  items: ['Cat', 'Dog', 'Rabbit', 'Tiger'].map((animal) {
-                    return DropdownMenuItem(value: animal, child: Text(animal));
+                  items: ['Dog', 'Cat', 'Rabbit', 'Monkey', 'Tiger', 'Others']
+                      .map((animal) {
+                    return DropdownMenuItem(
+                        value: animal,
+                        child: Text(animal,
+                            style: const TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w400)));
                   }).toList(),
                   onChanged: (value) {
                     setState(() {
@@ -167,9 +176,21 @@ class _RegistrationFormState extends State<RegistrationForm> {
                 DropdownButtonFormField<String>(
                   decoration: const InputDecoration(
                       border: OutlineInputBorder(), labelText: "State"),
-                  items: ['California', 'New York', 'Texas', 'Florida']
-                      .map((state) {
-                    return DropdownMenuItem(value: state, child: Text(state));
+                  items: [
+                    'Province-1',
+                    'Province-2',
+                    'Province-3',
+                    'Province-4',
+                    'Province-5',
+                    'Province-6',
+                    'Province-7'
+                  ].map((state) {
+                    return DropdownMenuItem(
+                        value: state,
+                        child: Text(state,
+                            style: const TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w400)));
                   }).toList(),
                   onChanged: (value) {
                     setState(() {
@@ -236,7 +257,11 @@ class _RegistrationFormState extends State<RegistrationForm> {
                         phone: _phoneController.text,
                         familyMembers: _familyMembers,
                       );
-                      // print(userForm);
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return DataPage(userRegistration: userForm);
+                      }));
+                      print(userForm);
                     }
                   },
                   child: const Text("Submit"),
