@@ -101,15 +101,11 @@ class _DataPageState extends State<DataPage> {
                     label: 'Family Member ${i + 1}',
                     value: widget.userRegistration.familyMembers[i].name,
                   ),
-    
               ],
             ),
-            
           ),
-          
         ),
       ),
-
     );
   }
 
@@ -121,7 +117,6 @@ class _DataPageState extends State<DataPage> {
     return ListTile(
       leading: Icon(icon, color: Theme.of(context).primaryColor),
       title: Text("$label : $value"),
-     
     );
   }
 }
