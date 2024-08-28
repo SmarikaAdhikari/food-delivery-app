@@ -1,4 +1,4 @@
-import 'package:awakened_devs_tasks/User%20Registration/screens/user_form.dart';
+import 'package:awakened_devs_tasks/User%20Registration/formdata/user_form.dart';
 import 'package:flutter/material.dart';
 
 class DataPage extends StatefulWidget {

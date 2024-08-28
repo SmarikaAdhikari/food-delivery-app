@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'familydetailspage.dart';
 import 'datapage.dart';
-import 'user_form.dart';
+import '../formdata/user_form.dart';
 
 class RegistrationForm extends StatefulWidget {
   @override
@@ -44,9 +44,9 @@ class _RegistrationFormState extends State<RegistrationForm> {
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 158, 134, 199),
         title: const Center(
-            child: Text("User Registration",
+            child: Text("User Registration Form",
                 style: TextStyle(
-                    color: Colors.black,
+                    color: Colors.white,
                     fontSize: 25,
                     fontWeight: FontWeight.w500))),
       ),
