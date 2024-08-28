@@ -4,10 +4,19 @@ import 'package:flutter/material.dart';
 
 final ThemeData appTheme = ThemeData(
   colorScheme: ColorScheme.fromSwatch(
-    primarySwatch: Colors.green,
+    primarySwatch: Colors.orange,
   ).copyWith(
-    secondary: Colors.orange,
-    background: Colors.white,
+    secondary: Colors.black,
+    background: const Color.fromARGB(255, 240, 240, 240),
+    surface: const Color.fromARGB(255, 233, 233, 233),
+    onPrimary: const Color.fromARGB(248, 194, 246, 72),
+    onPrimaryContainer: const Color.fromARGB(255, 72, 72, 72),
+    onSecondary: Colors.white,
+    onTertiary: Colors.grey[200],
+    onBackground: Colors.grey[600],
+    onSurface: Colors.grey,
+    error: Colors.red,
+    outline: Colors.grey.shade300,
   ),
   textTheme: TextTheme(
     headline1: const TextStyle(

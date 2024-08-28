@@ -27,7 +27,7 @@ class _FoodItemWidgetState extends State<FoodItemWidget> {
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: Colors.white,
+       color:Theme.of(context).colorScheme.onSecondary,
       ),
       child: InkWell(
         onTap: () {
@@ -52,7 +52,7 @@ class _FoodItemWidgetState extends State<FoodItemWidget> {
                     },
                     child: Icon(
                       Icons.favorite,
-                      color: isFavorite ? Colors.red : Colors.grey.shade300,
+                      color: isFavorite ? Theme.of(context).colorScheme.error : Theme.of(context).colorScheme.outline,
                     ),
                   ),
                 ),
@@ -94,7 +94,7 @@ class _FoodItemWidgetState extends State<FoodItemWidget> {
                     height: 25,
                     width: 25,
                     decoration: BoxDecoration(
-                      color: const Color.fromARGB(248, 194, 246, 72),
+                      color:Theme.of(context).colorScheme.onPrimary,
                       borderRadius: BorderRadius.circular(25),
                     ),
                     child: Center(

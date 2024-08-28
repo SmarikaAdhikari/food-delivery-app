@@ -18,7 +18,7 @@ class _ProductdetailsPageState extends State<ProductdetailsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color.fromARGB(255, 240, 240, 240),
+        backgroundColor:  Theme.of(context).colorScheme.background,
         body: Stack(children: [
           SingleChildScrollView(
             child: Padding(
@@ -40,11 +40,11 @@ class _ProductdetailsPageState extends State<ProductdetailsPage> {
                               padding: const EdgeInsets.all(10),
                               height: 50,
                               width: 50,
-                              decoration: const BoxDecoration(
-                                  color: Colors.white, shape: BoxShape.circle),
-                              child: const Icon(
+                              decoration: BoxDecoration(
+                                  color:Theme.of(context).colorScheme.onSecondary, shape: BoxShape.circle),
+                              child:  Icon(
                                 Icons.arrow_back_ios,
-                                color: Colors.grey,
+                                color: Theme.of(context).colorScheme.onBackground,
                               )),
                         ),
                         Text("Details",
@@ -54,12 +54,12 @@ class _ProductdetailsPageState extends State<ProductdetailsPage> {
                           child: Container(
                               height: 50,
                               width: 50,
-                              decoration: const BoxDecoration(
-                                  color: Colors.white, shape: BoxShape.circle),
-                              child: const Center(
+                              decoration:  BoxDecoration(
+                                 color:Theme.of(context).colorScheme.onSecondary, shape: BoxShape.circle),
+                              child: Center(
                                   child: Icon(
                                 Icons.my_location_outlined,
-                                color: Colors.grey,
+                                   color: Theme.of(context).colorScheme.onBackground,
                               ))),
                         ),
                       ],
@@ -70,8 +70,8 @@ class _ProductdetailsPageState extends State<ProductdetailsPage> {
                     Container(
                       height: 300,
                       width: double.infinity,
-                      decoration: const BoxDecoration(
-                        color: Color.fromARGB(255, 240, 240, 240),
+                      decoration: BoxDecoration(
+                        color:  Theme.of(context).colorScheme.background,
                       ),
                       child: Padding(
                           padding: const EdgeInsets.all(10.0),
@@ -85,8 +85,8 @@ class _ProductdetailsPageState extends State<ProductdetailsPage> {
                     const SizedBox(height: 10),
                     Row(
                       children: [
-                        const Icon(Icons.location_on,
-                            color: Color.fromARGB(248, 194, 246, 72)),
+                     Icon(Icons.location_on,
+                            color:Theme.of(context).colorScheme.onPrimary),
                         const SizedBox(width: 5),
                         Text(widget.item.location,
                             style: appTheme.textTheme.bodyMedium),
@@ -97,9 +97,9 @@ class _ProductdetailsPageState extends State<ProductdetailsPage> {
                       padding: const EdgeInsets.all(10),
                       height: 80,
                       width: 390,
-                      decoration: const BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                      decoration: BoxDecoration(
+                       color:Theme.of(context).colorScheme.onSecondary,
+                        borderRadius: const BorderRadius.all(Radius.circular(20)),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(
@@ -110,19 +110,19 @@ class _ProductdetailsPageState extends State<ProductdetailsPage> {
                               measures(
                                   context, widget.item.kcal.toDouble(), "kcal"),
                               VerticalDivider(
-                                color: Colors.grey[300],
+                                color: Theme.of(context).colorScheme.outline,
                                 thickness: 1,
                               ),
                               measures(context, widget.item.proteins.toDouble(),
                                   "proteins"),
                               VerticalDivider(
-                                color: Colors.grey[300],
+                                  color: Theme.of(context).colorScheme.outline,
                                 thickness: 1,
                               ),
                               measures(
                                   context, widget.item.fats.toDouble(), "fat"),
                               VerticalDivider(
-                                color: Colors.grey[300],
+                                   color: Theme.of(context).colorScheme.outline,
                                 thickness: 1,
                               ),
                               measures(context, widget.item.carbo.toDouble(),
@@ -138,7 +138,7 @@ class _ProductdetailsPageState extends State<ProductdetailsPage> {
                       widget.item.description,
                       style: Theme.of(context).textTheme.bodyMedium,
                       trimLines: 3,
-                      colorClickableText: Colors.grey,
+                      colorClickableText:  Theme.of(context).colorScheme.onSurface,
                       trimMode: TrimMode.Line,
                       trimCollapsedText: 'See more',
                       trimExpandedText: 'Show less',
@@ -157,9 +157,9 @@ class _ProductdetailsPageState extends State<ProductdetailsPage> {
       child: Container(
         height: 70,
         width: 390,
-        decoration: const BoxDecoration(
-          color: Color.fromARGB(255, 240, 240, 240),
-          borderRadius: BorderRadius.only(
+        decoration:  BoxDecoration(
+          color:Theme.of(context).colorScheme.background,
+          borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(20), topRight: Radius.circular(20)),
         ),
         child: Row(
@@ -173,11 +173,11 @@ class _ProductdetailsPageState extends State<ProductdetailsPage> {
               child: Container(
                 height: 50,
                 width: 50,
-                decoration: const BoxDecoration(
-                    color: Colors.white, shape: BoxShape.circle),
-                child: const ImageIcon(
-                  AssetImage("images/cart.png"),
-                  color: Colors.black,
+                decoration: BoxDecoration(
+                    color:Theme.of(context).colorScheme.onSecondary, shape: BoxShape.circle),
+                child: ImageIcon(
+                  const AssetImage("images/cart.png"),
+                  color: Theme.of(context).colorScheme.scrim,
                 ),
               ),
             ),
@@ -185,7 +185,7 @@ class _ProductdetailsPageState extends State<ProductdetailsPage> {
                 height: 55,
                 width: 300,
                 decoration: BoxDecoration(
-                    color: const Color.fromARGB(248, 194, 246, 72),
+                    color:  Theme.of(context).colorScheme.onPrimary,
                     borderRadius: BorderRadius.circular(25)),
                 child: Center(
                     child:

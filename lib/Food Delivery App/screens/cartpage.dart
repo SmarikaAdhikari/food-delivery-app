@@ -22,12 +22,12 @@ class CartPage extends StatelessWidget {
             margin: const EdgeInsets.all(10),
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: Theme.of(context).colorScheme.onSecondary,
               borderRadius: BorderRadius.circular(10),
-              boxShadow: const [
+              boxShadow:  [
                 BoxShadow(
-                  color: Colors.grey,
-                  offset: Offset(0, 2),
+                   color: Theme.of(context).colorScheme.onSurface,
+                  offset:const  Offset(0, 2),
                   blurRadius: 5,
                 ),
               ],

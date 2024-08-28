@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 240, 240, 240),
+      backgroundColor:  Theme.of(context).colorScheme.background,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(left: 10.0, right: 10, top: 10),
@@ -93,12 +93,12 @@ class _HomePageState extends State<HomePage> {
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 10.0),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color:  Theme.of(context).colorScheme.onSecondary,
                     borderRadius: BorderRadius.circular(25),
                   ),
                   child: Row(
                     children: [
-                      const Icon(Icons.search, color: Colors.grey),
+                      Icon(Icons.search, color:  Theme.of(context).colorScheme.onSurface),
                       const SizedBox(width: 10),
                       Expanded(
                         child: TextField(
@@ -124,7 +124,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                       IconButton(
-                        icon: const Icon(Icons.close, color: Colors.grey),
+                        icon: Icon(Icons.close, color:  Theme.of(context).colorScheme.onSurface),
                         onPressed: () {
                           setState(() {
                             isSearching = false;
@@ -145,8 +145,8 @@ class _HomePageState extends State<HomePage> {
                 child: Container(
                   height: 50,
                   width: 50,
-                  decoration: const BoxDecoration(
-                      color: Colors.white, shape: BoxShape.circle),
+                  decoration:  BoxDecoration(
+                       color:  Theme.of(context).colorScheme.onSecondary, shape: BoxShape.circle),
                   child:
                       Image.asset("images/search.png", height: 20, width: 20),
                 ),
@@ -157,8 +157,8 @@ class _HomePageState extends State<HomePage> {
               Text("Location", style: appTheme.textTheme.bodyMedium),
               Row(
                 children: [
-                  const Icon(Icons.location_on,
-                      color: Color.fromARGB(248, 194, 246, 72)),
+                  Icon(Icons.location_on,
+                      color: Theme.of(context).colorScheme.onPrimary),
                   const SizedBox(width: 5),
                   Text("Naperville, Illinois",
                       style: appTheme.textTheme.bodyText1),
@@ -171,8 +171,9 @@ class _HomePageState extends State<HomePage> {
           Container(
             height: 50,
             width: 50,
-            decoration: const BoxDecoration(
-                color: Colors.white, shape: BoxShape.circle),
+            decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.onSecondary,
+                shape: BoxShape.circle),
             child: InkWell(
                 onTap: () {},
                 child: Center(
@@ -190,7 +191,7 @@ class _HomePageState extends State<HomePage> {
     return Container(
         height: 175,
         decoration: BoxDecoration(
-          color: const Color.fromARGB(255, 64, 64, 64),
+          color: Theme.of(context).colorScheme.onPrimaryContainer,
           borderRadius: BorderRadius.circular(20),
         ),
         child: Row(
@@ -213,7 +214,7 @@ class _HomePageState extends State<HomePage> {
                         height: 35,
                         width: 90,
                         decoration: BoxDecoration(
-                            color: const Color.fromARGB(248, 194, 246, 72),
+                           color:  Theme.of(context).colorScheme.onPrimary,
                             borderRadius: BorderRadius.circular(25)),
                         child: Center(
                             child: Text("Order Now",
