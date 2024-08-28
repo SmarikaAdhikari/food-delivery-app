@@ -1,8 +1,9 @@
 // ignore_for_file: use_key_in_widget_constructors, library_private_types_in_public_api, prefer_final_fields, unused_local_variable
 
-import 'package:awakened_devs_tasks/User%20Registration/screens/datapage.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'familydetailspage.dart';
+import 'datapage.dart';
 import 'user_form.dart';
 
 class RegistrationForm extends StatefulWidget {
@@ -23,6 +24,18 @@ class _RegistrationFormState extends State<RegistrationForm> {
   String? _favoriteAnimal;
   String? _state;
   List<FamilyMember> _familyMembers = [];
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+    _verifyPasswordController.dispose();
+    _addressController.dispose();
+    _cityController.dispose();
+    _phoneController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

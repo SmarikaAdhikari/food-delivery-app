@@ -13,11 +13,13 @@ class _DataPageState extends State<DataPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
+        leading: const Icon(Icons.arrow_back_ios, color: Colors.white),
         backgroundColor: const Color.fromARGB(255, 158, 134, 199),
-        title: const Text('Data Page',
+        title: const Text('Form Data',
             style: TextStyle(
-                color: Colors.black,
+                color: Colors.white,
                 fontSize: 25,
                 fontWeight: FontWeight.w500)),
       ),
@@ -25,7 +27,7 @@ class _DataPageState extends State<DataPage> {
         padding: const EdgeInsets.all(8.0),
         child: Card(
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(20.0),
             child: ListView(
               children: [
                 _buildUserInfoCard(
@@ -99,11 +101,15 @@ class _DataPageState extends State<DataPage> {
                     label: 'Family Member ${i + 1}',
                     value: widget.userRegistration.familyMembers[i].name,
                   ),
+    
               ],
             ),
+            
           ),
+          
         ),
       ),
+
     );
   }
 
@@ -114,8 +120,8 @@ class _DataPageState extends State<DataPage> {
   }) {
     return ListTile(
       leading: Icon(icon, color: Theme.of(context).primaryColor),
-      title: Text("$label : $value,"),
-      // subtitle: Text(value),
+      title: Text("$label : $value"),
+     
     );
   }
 }
