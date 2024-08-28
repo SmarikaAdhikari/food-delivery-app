@@ -1,5 +1,6 @@
-// ignore_for_file: deprecated_member_use
+// ignore_for_file: deprecated_member_use, unused_import
 import 'package:awakened_devs_tasks/Food%20Delivery%20App/buttomnavigationpage.dart';
+import 'package:awakened_devs_tasks/User%20Registration/pages/formfillpage.dart';
 import 'package:awakened_devs_tasks/constants/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Food Delivery App',
       theme: appTheme,
-      home: const BottomNavigationPage(),
+      home: RegistrationForm(),
     );
   }
 }
