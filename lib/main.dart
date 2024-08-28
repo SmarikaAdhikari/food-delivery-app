@@ -1,4 +1,4 @@
-import 'package:awakened_devs_tasks/User%20Registration/screens/formfillpage.dart';
+import 'package:awakened_devs_tasks/User%20Registration/pages/formfillpage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
