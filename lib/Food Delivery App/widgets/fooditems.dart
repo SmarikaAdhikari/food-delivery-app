@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../models/cartmodel.dart';
 import '../models/favoritemodel.dart';
 import '../models/fooditems.dart';
@@ -27,7 +26,7 @@ class _FoodItemWidgetState extends State<FoodItemWidget> {
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-       color:Theme.of(context).colorScheme.onSecondary,
+        color: Theme.of(context).colorScheme.onSecondary,
       ),
       child: InkWell(
         onTap: () {
@@ -50,25 +49,32 @@ class _FoodItemWidgetState extends State<FoodItemWidget> {
                     onTap: () {
                       favoritesModel.toggleFavorite(widget.item);
                     },
-                    child: Icon(
-                      Icons.favorite,
-                      color: isFavorite ? Theme.of(context).colorScheme.error : Theme.of(context).colorScheme.outline,
+                    child: Image.asset(
+                      "images/favourite.png",
+                      height: 25,
+                      width: 25,
+                      color: isFavorite
+                          ? Theme.of(context).colorScheme.error
+                          : Theme.of(context).colorScheme.outline,
                     ),
                   ),
                 ),
-                Image.asset(widget.item.image, height: 110, width: 160),
+                Padding(
+                  padding: const EdgeInsets.only(top: 15.0),
+                  child: Image.asset(widget.item.image, height: 90, width: 160),
+                ),
               ],
             ),
-            const SizedBox(height: 15),
+            const SizedBox(height: 20),
             Text(
               widget.item.name,
-              style: Theme.of(context).textTheme.titleMedium,
+              style: Theme.of(context).textTheme.headlineSmall,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
             ),
             Text(
               widget.item.description,
-              style: Theme.of(context).textTheme.bodyMedium,
+              style: Theme.of(context).textTheme.displaySmall,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
             ),
@@ -77,7 +83,7 @@ class _FoodItemWidgetState extends State<FoodItemWidget> {
               children: [
                 Text(
                   "\$${widget.item.price}",
-                  style: Theme.of(context).textTheme.displayMedium,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 const Spacer(),
                 InkWell(
@@ -94,13 +100,13 @@ class _FoodItemWidgetState extends State<FoodItemWidget> {
                     height: 25,
                     width: 25,
                     decoration: BoxDecoration(
-                      color:Theme.of(context).colorScheme.onPrimary,
+                      color: Theme.of(context).colorScheme.onPrimary,
                       borderRadius: BorderRadius.circular(25),
                     ),
                     child: Center(
                       child: Text(
                         "+",
-                        style: Theme.of(context).textTheme.titleMedium,
+                        style: Theme.of(context).textTheme.headlineSmall,
                       ),
                     ),
                   ),

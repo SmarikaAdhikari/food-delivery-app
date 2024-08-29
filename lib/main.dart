@@ -55,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Text(
               'You have pushed the button this many times:',
-              style: Theme.of(context).textTheme.bodyText1,
+              style: Theme.of(context).textTheme.bodySmall,
             ),
           ],
         ),
@@ -63,4 +63,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-//feature/ui-implementation

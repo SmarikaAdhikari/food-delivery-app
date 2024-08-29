@@ -252,7 +252,8 @@ class _RegistrationFormState extends State<RegistrationForm> {
                       ));
                     });
                   },
-                  child: const Text("Add Family Member"),
+                  child: const Text("Add Family Member",
+                      style: TextStyle(fontSize: 20)),
                 ),
                 const SizedBox(height: 20),
                 ElevatedButton(
@@ -277,7 +278,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
                       print(userForm);
                     }
                   },
-                  child: const Text("Submit"),
+                  child: const Text("Submit", style: TextStyle(fontSize: 20)),
                 ),
               ],
             ),

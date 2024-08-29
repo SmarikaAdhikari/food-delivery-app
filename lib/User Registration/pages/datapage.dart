@@ -15,7 +15,12 @@ class _DataPageState extends State<DataPage> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        leading: const Icon(Icons.arrow_back_ios, color: Colors.white),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         backgroundColor: const Color.fromARGB(255, 158, 134, 199),
         title: const Text('Form Data',
             style: TextStyle(
@@ -35,56 +40,48 @@ class _DataPageState extends State<DataPage> {
                   label: 'Name',
                   value: widget.userRegistration.name,
                 ),
-                const Divider(),
                 _buildUserInfoCard(
                   icon: Icons.cake,
                   label: 'Date of Birth',
                   value: "${widget.userRegistration.dateOfBirth.toLocal()}"
                       .split(' ')[0],
                 ),
-                const Divider(),
                 _buildUserInfoCard(
                   icon: Icons.pets,
                   label: 'Favorite Animal',
                   value: widget.userRegistration.favoriteAnimal,
                 ),
-                const Divider(),
                 _buildUserInfoCard(
                   icon: Icons.email,
                   label: 'Email',
                   value: widget.userRegistration.email,
                 ),
-                const Divider(),
                 _buildUserInfoCard(
                   icon: Icons.lock,
                   label: 'Password',
                   value: widget.userRegistration.password,
                 ),
-                const Divider(),
                 _buildUserInfoCard(
                   icon: Icons.home,
                   label: 'Address',
                   value: widget.userRegistration.address,
                 ),
-                const Divider(),
                 _buildUserInfoCard(
                   icon: Icons.location_city,
                   label: 'City',
                   value: widget.userRegistration.city,
                 ),
-                const Divider(),
                 _buildUserInfoCard(
                   icon: Icons.map,
                   label: 'State',
                   value: widget.userRegistration.state,
                 ),
-                const Divider(),
                 _buildUserInfoCard(
                   icon: Icons.phone,
                   label: 'Phone',
                   value: widget.userRegistration.phone,
                 ),
-                const Divider(),
+                Divider(thickness: 0.5, color: ThemeData().colorScheme.outline),
                 const SizedBox(height: 16.0),
                 const Padding(
                   padding: EdgeInsets.all(8.0),
@@ -115,7 +112,7 @@ class _DataPageState extends State<DataPage> {
     required String value,
   }) {
     return ListTile(
-      leading: Icon(icon, color: Theme.of(context).primaryColor),
+      leading: Icon(icon, color: Theme.of(context).colorScheme.primary),
       title: Text("$label : $value"),
     );
   }

@@ -1,7 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:awakened_devs_tasks/Food%20Delivery%20App/widgets/fooditems.dart';
-import 'package:awakened_devs_tasks/constants/theme.dart';
 import 'package:flutter/material.dart';
 import '../models/cuisine.dart';
 import '../models/fooditems.dart';
@@ -27,14 +26,14 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:  Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(left: 10.0, right: 10, top: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 25),
+              const SizedBox(height: 20),
               appBar(),
               const SizedBox(height: 20),
               onboard(),
@@ -45,6 +44,7 @@ class _HomePageState extends State<HomePage> {
                   scrollDirection: Axis.horizontal,
                   itemCount: cuisine.length,
                   itemBuilder: (context, index) => foodlist(
+                    context,
                     cuisine[index],
                   ),
                 ),
@@ -52,12 +52,19 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(height: 20),
               Row(
                 children: [
-                  Text("Recommended for you",
-                      style: appTheme.textTheme.bodyText1),
+                  Text(
+                    "Recommended for you",
+                    style: Theme.of(context).textTheme.labelMedium,
+                  ),
                   const Spacer(),
                   Text(
-                    " See all",
-                    style: appTheme.textTheme.bodyMedium,
+                    " See More",
+                    style: TextStyle(
+                      fontSize: 13.0,
+                      decoration: TextDecoration.underline,
+                      color: Theme.of(context).colorScheme.outline,
+                      fontFamily: 'Roboto',
+                    ),
                   ),
                 ],
               ),
@@ -93,12 +100,13 @@ class _HomePageState extends State<HomePage> {
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 10.0),
                   decoration: BoxDecoration(
-                    color:  Theme.of(context).colorScheme.onSecondary,
+                    color: Theme.of(context).colorScheme.onSecondary,
                     borderRadius: BorderRadius.circular(25),
                   ),
                   child: Row(
                     children: [
-                      Icon(Icons.search, color:  Theme.of(context).colorScheme.onSurface),
+                      Icon(Icons.search,
+                          color: Theme.of(context).colorScheme.onSurface),
                       const SizedBox(width: 10),
                       Expanded(
                         child: TextField(
@@ -124,11 +132,12 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                       IconButton(
-                        icon: Icon(Icons.close, color:  Theme.of(context).colorScheme.onSurface),
+                        icon: Icon(Icons.close,
+                            color: Theme.of(context).colorScheme.onSurface),
                         onPressed: () {
                           setState(() {
                             isSearching = false;
-                            filteredItems = fooditem; // Reset the filter
+                            filteredItems = fooditem;
                           });
                         },
                       ),
@@ -145,25 +154,30 @@ class _HomePageState extends State<HomePage> {
                 child: Container(
                   height: 50,
                   width: 50,
-                  decoration:  BoxDecoration(
-                       color:  Theme.of(context).colorScheme.onSecondary, shape: BoxShape.circle),
-                  child:
-                      Image.asset("images/search.png", height: 20, width: 20),
+                  decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.onSecondary,
+                      shape: BoxShape.circle),
+                  child: Image.asset("images/search.png",
+                      height: 20,
+                      width: 20,
+                      color: ThemeData().colorScheme.outline),
                 ),
               ),
         if (!isSearching) ...[
           Column(
             children: [
-              Text("Location", style: appTheme.textTheme.bodyMedium),
+              Text("Location", style: Theme.of(context).textTheme.displaySmall),
               Row(
                 children: [
                   Icon(Icons.location_on,
                       color: Theme.of(context).colorScheme.onPrimary),
                   const SizedBox(width: 5),
-                  Text("Naperville, Illinois",
-                      style: appTheme.textTheme.bodyText1),
+                  Text(
+                    "Naperville, Illinois",
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
                   const SizedBox(width: 5),
-                  const Icon(Icons.arrow_drop_down)
+                  Image.asset('images/ios-arrow-down-4.png', height: 18),
                 ],
               ),
             ],
@@ -178,9 +192,11 @@ class _HomePageState extends State<HomePage> {
                 onTap: () {},
                 child: Center(
                     child: Badge(
-                        label: Text("3", style: appTheme.textTheme.titleSmall),
+                        label: Text("3",
+                            style: Theme.of(context).textTheme.titleSmall),
                         child: Image.asset('images/notification.png',
-                            height: 30)))),
+                            height: 30,
+                            color: ThemeData().colorScheme.outline)))),
           ),
         ]
       ],
@@ -203,31 +219,38 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Text(
                       " Free Delivery For",
-                      style: appTheme.textTheme.headline3,
+                      style: Theme.of(context).textTheme.titleMedium,
                     ),
-                    Text(" Spaghetti", style: appTheme.textTheme.headline3),
+                    Text(
+                      " Spaghetti",
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
                     const SizedBox(height: 5),
-                    Text(" Up to 3 times per day",
-                        style: appTheme.textTheme.subtitle2),
+                    Text(
+                      " Up to 3 times per day",
+                      style: Theme.of(context).textTheme.titleSmall,
+                    ),
                     const SizedBox(height: 25),
                     Container(
                         height: 35,
                         width: 90,
                         decoration: BoxDecoration(
-                           color:  Theme.of(context).colorScheme.onPrimary,
+                            color: Theme.of(context).colorScheme.onPrimary,
                             borderRadius: BorderRadius.circular(25)),
                         child: Center(
-                            child: Text("Order Now",
-                                style: appTheme.textTheme.button)))
+                            child: Text(
+                          "Order Now",
+                          style: Theme.of(context).textTheme.displaySmall,
+                        )))
                   ]),
             ),
             Expanded(
               child: FittedBox(
-                fit: BoxFit.cover,
+                fit: BoxFit.fill,
                 child: Image.asset(
                   "pictures/spaghetti.png",
-                  height: 280,
-                  width: 250,
+                  height: 105,
+                  width: 105,
                 ),
               ),
             ),

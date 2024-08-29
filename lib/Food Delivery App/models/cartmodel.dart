@@ -5,7 +5,6 @@ import 'fooditems.dart';
 class CartModel with ChangeNotifier {
   final List<Fooditems> _items = [];
 
-
   List<Fooditems> get items => _items;
 
   void addItem(Fooditems item) {
@@ -17,5 +16,6 @@ class CartModel with ChangeNotifier {
     _items.remove(item);
     notifyListeners();
   }
+
   int get cartItemCount => _items.length;
 }
