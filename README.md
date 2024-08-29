@@ -36,6 +36,16 @@ State Management: Managed using Provider to maintain consistency across differen
 
 
 
+
+
+
+
+
+
+
+
+
+
 Task 2- Dynamic User Registration Form Implementation with Freezed
 
 Overview:
