@@ -57,6 +57,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
           child: SingleChildScrollView(
             child: Column(
               children: [
+                const SizedBox(height: 10),
                 TextFormField(
                   controller: _nameController,
                   decoration: const InputDecoration(
