@@ -56,7 +56,10 @@ Features:
 
 Dynamic User Registration Form: Collects user information such as name, date of birth, email, password, address, and phone number.
 Family Member Details: Allows users to input details for multiple family members, including their names, relationships, and dates of birth.
+
 Freezed Package: Utilizes the freezed package for generating immutable model classes.
+
 Data Page: Displays submitted registration data in a user-friendly, Google Form-like layout.
+
 State Management: Manages form state effectively using Provider.
 
