@@ -66,7 +66,8 @@ class FamilyMemberForm extends StatelessWidget {
             const SizedBox(height: 10),
             ElevatedButton(
               onPressed: onRemove,
-              child: const Text('Remove Family Member'),
+              child: const Text('Remove Family Member',
+                  style: TextStyle(fontSize: 15)),
             ),
           ],
         ),
