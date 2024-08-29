@@ -21,7 +21,7 @@ class _DataPageState extends State<DataPage> {
             Navigator.pop(context);
           },
         ),
-        backgroundColor: const Color.fromARGB(255, 158, 134, 199),
+        backgroundColor: const Color.fromARGB(255, 156, 141, 178),
         title: const Text('Form Data',
             style: TextStyle(
                 color: Colors.white,
@@ -112,8 +112,8 @@ class _DataPageState extends State<DataPage> {
     required String value,
   }) {
     return ListTile(
-      leading: Icon(icon, color: Theme.of(context).colorScheme.primary),
-      title: Text("$label : $value"),
+      leading: Icon(icon, color: const Color.fromARGB(255, 156, 141, 178)),
+      title: Text("$label : $value", style: const TextStyle(fontSize: 18,color: Colors.black87)),
     );
   }
 }

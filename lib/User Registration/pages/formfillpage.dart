@@ -40,9 +40,9 @@ class _RegistrationFormState extends State<RegistrationForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 217, 202, 243),
+      backgroundColor: const Color.fromARGB(255, 232, 231, 234),
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 158, 134, 199),
+        backgroundColor: const Color.fromARGB(255, 156, 141, 178),
         title: const Center(
             child: Text("User Registration Form",
                 style: TextStyle(
